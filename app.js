@@ -4,6 +4,10 @@ const port = process.env.PORT ?? 3000;
 
 app.use(express.static('public'))
 
+app.get('/admin', (req, res) => {
+    res.send('Hello Admin');
+});
+
 app.get('*', (req, res) => {
     res.redirect('/');
 })
